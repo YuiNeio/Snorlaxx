@@ -22,4 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
     nextButton.addEventListener('click', () => {
         scrollNewsContainer(1);
     });
+    
+    document.getElementById('testimonial-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Simulate form submission
+    setTimeout(function() {
+        // Display the notification
+        var notification = document.getElementById('notification');
+        notification.classList.add('show');
+
+        // Hide the notification after 3 seconds
+        setTimeout(function() {
+            notification.classList.remove('show');
+        }, 3000);
+
+        // Optionally, you can reset the form here
+        document.getElementById('testimonial-form').reset();
+    }, 500); // Simulate a delay for form submission
 });
